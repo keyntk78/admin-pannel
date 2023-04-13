@@ -1,0 +1,50 @@
+[
+  {
+    "display_name": "Dashboard",
+    "route": "/",
+    "icon": "fa-solid fa-gauge"
+  },
+  {
+    "display_name": "Table",
+    "route": "/table",
+    "icon": "fa-solid fa-table-columns"
+  },
+  {
+    "display_name": "Form",
+    "route": "/form",
+    "icon": "fa-solid fa-keyboard"
+  },
+  {
+    "display_name": "UI",
+    "route": "/ui",
+    "icon": "fa-solid fa-desktop"
+  },
+  {
+    "display_name": "Plugin",
+    "route": "/plugin",
+    "icon": "fa-solid fa-code"
+  },
+  {
+    "display_name": "Profile",
+    "route": "/profile",
+    "icon": "fa-solid fa-address-card"
+  },
+
+  {
+    "display_name": "NotFound",
+    "route": "/notfound",
+    "icon": "fa-solid fa-circle-exclamation"
+  },
+
+  {
+    "display_name": "Login",
+    "route": "/login",
+    "icon": "fa-solid fa-user"
+  },
+
+  {
+    "display_name": "Register",
+    "route": "/register",
+    "icon": "fa-solid fa-user-plus"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "fa-solid fa-bug",
+    "content": "Curabitur id eros quis nunc suscipit blandit"
+  },
+  {
+    "icon": "fa-solid fa-cube",
+    "content": "Duis malesuada justo eu sapien elementum, in semper diam posuere"
+  },
+  {
+    "icon": "fa-solid fa-cart-shopping",
+    "content": "Donec at nisi sit amet tortor commodo porttitor pretium a erat"
+  },
+  {
+    "icon": "fa-solid fa-bug",
+    "content": "In gravida mauris et nisi"
+  },
+  {
+    "icon": "fa-solid fa-cube",
+    "content": "Curabitur id eros quis nunc suscipit blandit"
+  }
+]

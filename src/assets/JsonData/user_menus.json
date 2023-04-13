@@ -1,0 +1,18 @@
+[
+  {
+    "icon": "fa-solid fa-user",
+    "content": "Profile"
+  },
+  {
+    "icon": "fa-solid fa-wallet",
+    "content": "My Wallet"
+  },
+  {
+    "icon": "fa-solid fa-gear",
+    "content": "Settings"
+  },
+  {
+    "icon": "fa-solid fa-right-from-bracket",
+    "content": "Logout"
+  }
+]

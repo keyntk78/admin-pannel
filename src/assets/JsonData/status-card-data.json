@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "fa-solid fa-bag-shopping",
+    "count": "1,995",
+    "title": "Total sales",
+    "color": "#10d4d2"
+  },
+  {
+    "icon": "fa-solid fa-cart-shopping",
+    "count": "2,001",
+    "title": "Daily visits",
+    "color": "#349eff"
+  },
+  {
+    "icon": "fa-solid fa-dollar-sign",
+    "count": "$2,632",
+    "title": "Total income",
+    "color": "#d68102"
+  },
+  {
+    "icon": "fa-solid fa-receipt",
+    "count": "1,711",
+    "title": "Total orders",
+    "color": "#019707"
+  }
+]
