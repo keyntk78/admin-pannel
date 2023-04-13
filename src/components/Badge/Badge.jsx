@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 
 const Badge = (props) => {
-  let type = `${props.type}`;
+  let type = `${props.type}`
 
   return (
     <span
-      className={`py-[6px] px-[12px] text-white rounded-[15px] dark:shadow-box-shadow-dark shadow-main`}
+      className={`rounded-[15px] px-[12px] py-[6px] text-white shadow-main dark:shadow-box-shadow-dark`}
       style={{ backgroundColor: type }}
     >
       {props.content}
     </span>
-  );
-};
+  )
+}
 
-export default Badge;
+export default Badge

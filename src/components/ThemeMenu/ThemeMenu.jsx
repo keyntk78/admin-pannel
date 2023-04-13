@@ -1,103 +1,98 @@
-import React, { useRef, useState, useEffect } from 'react';
-import useDarkMode from '../../useDarkMode';
+import React, { useRef, useState, useEffect } from 'react'
+import useDarkMode from '../../useDarkMode'
 
 const mode_settings = [
   {
     id: 'light',
     name: 'light',
-    background: 'light-background',
+    background: 'light-background'
   },
   {
     id: 'dark',
     name: 'dark',
-    background: 'dark-background',
-  },
-];
+    background: 'dark-background'
+  }
+]
 
 const color_settings = [
   {
     id: 'blue',
     name: 'Blue',
-    background: 'blue-color',
+    background: 'blue-color'
   },
   {
     id: 'red',
     name: 'Red',
-    background: 'red-color',
+    background: 'red-color'
   },
   {
     id: 'cyan',
     name: 'Cyan',
-    background: 'cyan-color',
+    background: 'cyan-color'
   },
   {
     id: 'green',
     name: 'Green',
-    background: 'green-color',
+    background: 'green-color'
   },
   {
     id: 'orange',
     name: 'Orange',
-    background: 'orange-color',
-  },
-];
+    background: 'orange-color'
+  }
+]
 
 const clickOutsideRef = (content_ref, toggle_ref) => {
   document.addEventListener('mousedown', (e) => {
     // user click toggle
     if (toggle_ref.current && toggle_ref.current.contains(e.target)) {
-      content_ref.current.classList.toggle('active');
+      content_ref.current.classList.toggle('active')
     } else {
       // user click outside toggle and content
       if (content_ref.current && !content_ref.current.contains(e.target)) {
-        content_ref.current.classList.remove('active');
+        content_ref.current.classList.remove('active')
       }
     }
-  });
-};
+  })
+}
 
 const ThemeMenu = () => {
-  const menu_ref = useRef(null);
-  const menu_toggle_ref = useRef(null);
+  const menu_ref = useRef(null)
+  const menu_toggle_ref = useRef(null)
 
-  clickOutsideRef(menu_ref, menu_toggle_ref);
+  clickOutsideRef(menu_ref, menu_toggle_ref)
 
-  const setActiveMenu = () =>
-    menu_ref.current.classList.add('theme-menu--active');
+  const setActiveMenu = () => menu_ref.current.classList.add('theme-menu--active')
 
   const closeMenu = () => {
-    return menu_ref.current.classList.remove('theme-menu--active');
-  };
+    return menu_ref.current.classList.remove('theme-menu--active')
+  }
 
-  const [currMode, setcurrMode] = useState('light');
+  const [currMode, setcurrMode] = useState('light')
 
   const setMode = (mode) => {
-    setcurrMode(mode.id);
-    localStorage.setItem('theme', mode.name);
-  };
+    setcurrMode(mode.id)
+    localStorage.setItem('theme', mode.name)
+  }
 
-  const [currColor, setcurrColor] = useState('blue');
+  const [currColor, setcurrColor] = useState('blue')
 
   const setColor = (color) => {
-    setcurrColor(color.id);
-    localStorage.setItem('color', color.name);
-  };
+    setcurrColor(color.id)
+    localStorage.setItem('color', color.name)
+  }
 
   useEffect(() => {
-    const themeName = mode_settings.find(
-      (e) => e.name === localStorage.getItem('theme', 'Light')
-    );
+    const themeName = mode_settings.find((e) => e.name === localStorage.getItem('theme', 'Light'))
 
-    const colorName = color_settings.find(
-      (e) => e.name === localStorage.getItem('color', 'Light')
-    );
+    const colorName = color_settings.find((e) => e.name === localStorage.getItem('color', 'Light'))
 
-    if (themeName !== undefined) setcurrMode(themeName.id);
+    if (themeName !== undefined) setcurrMode(themeName.id)
 
-    if (colorName !== undefined) setcurrColor(colorName.id);
-  }, []);
+    if (colorName !== undefined) setcurrColor(colorName.id)
+  }, [])
 
-  const [isDarkMode, toggleDarkMode] = useDarkMode();
+  const [isDarkMode, toggleDarkMode] = useDarkMode()
 
   return (
     <div>
@@ -106,13 +101,10 @@ const ThemeMenu = () => {
       </button>
       <div
         ref={menu_ref}
-        className='fixed -right-[300px] top-0 w-[300px] h-screen p-5 bg-main-bg shadow-main z-50 transition-all duration-500 ease-cubic'
+        className='fixed -right-[300px] top-0 z-50 h-screen w-[300px] bg-main-bg p-5 shadow-main transition-all duration-500 ease-cubic'
       >
         <h4 className='text-xl font-semibold'>Theme Setting</h4>
-        <button
-          className='absolute top-[17px] right-5 bg-transparent text-xl'
-          onClick={() => closeMenu()}
-        >
+        <button className='absolute right-5 top-[17px] bg-transparent text-xl' onClick={() => closeMenu()}>
           <i className='fa-solid fa-x'></i>
         </button>
         <div className='mt-10'>
@@ -122,11 +114,11 @@ const ThemeMenu = () => {
               return (
                 <li
                   key={index}
-                  className='flex items-center cursor-pointer mt-[10px]'
+                  className='mt-[10px] flex cursor-pointer items-center'
                   onClick={() => toggleDarkMode(!isDarkMode)}
                 >
                   <div
-                    className={`w-[30px] h-[30px] rounded-full flex items-center justify-center mr-[10px] text-lg shadow-main ${item.background}`}
+                    className={`mr-[10px] flex h-[30px] w-[30px] items-center justify-center rounded-full text-lg shadow-main ${item.background}`}
                   >
                     <i
                       className={`fa-solid fa-check transition-transform duration-500 ease-cubic ${
@@ -136,7 +128,7 @@ const ThemeMenu = () => {
                   </div>
                   <span className=''>{item.name}</span>
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
@@ -146,13 +138,9 @@ const ThemeMenu = () => {
           <ul className='mt-5'>
             {color_settings.map((item, index) => {
               return (
-                <li
-                  key={index}
-                  className='flex items-center cursor-pointer mt-[10px]'
-                  onClick={() => setColor(item)}
-                >
+                <li key={index} className='mt-[10px] flex cursor-pointer items-center' onClick={() => setColor(item)}>
                   <div
-                    className={`w-[30px] h-[30px] rounded-full flex items-center justify-center mr-[10px] text-lg shadow-main ${item.background}`}
+                    className={`mr-[10px] flex h-[30px] w-[30px] items-center justify-center rounded-full text-lg shadow-main ${item.background}`}
                   >
                     <i
                       className={`fa-solid fa-check transition-transform duration-500 ease-cubic ${
@@ -162,13 +150,13 @@ const ThemeMenu = () => {
                   </div>
                   <span className=''>{item.name}</span>
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ThemeMenu;
+export default ThemeMenu

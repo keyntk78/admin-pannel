@@ -1,64 +1,64 @@
-import Dashboard from '../pages/Dashboard/Dashboard';
-import TablePage from '../pages/TablePage/TablePage';
-import FormPage from '../pages/FormPage/FormPage';
-import UIPage from '../pages/UIPage/UIPage';
-import PluginPage from '../pages/PluginPage/PluginPage';
-import ProfilePage from '../pages/ProfilePage/ProfilePage';
-import NotFound from '../pages/NotFound/NotFound';
-import Login from '../pages/Login/Login';
-import Register from '../pages/Register/Register';
+import Dashboard from '../pages/Dashboard/Dashboard'
+import TablePage from '../pages/TablePage/TablePage'
+import FormPage from '../pages/FormPage/FormPage'
+import UIPage from '../pages/UIPage/UIPage'
+import PluginPage from '../pages/PluginPage/PluginPage'
+import ProfilePage from '../pages/ProfilePage/ProfilePage'
+import NotFound from '../pages/NotFound/NotFound'
+import Login from '../pages/Login/Login'
+import Register from '../pages/Register/Register'
 
 export const routes = [
   {
     path: '/',
     page: Dashboard,
-    isShow: true,
+    isShow: true
   },
   {
     path: '/table',
     page: TablePage,
-    isShow: true,
+    isShow: true
   },
   {
     path: '/form',
     page: FormPage,
-    isShow: true,
+    isShow: true
   },
   {
     path: '/ui',
     page: UIPage,
-    isShow: true,
+    isShow: true
   },
   {
     path: '/plugin',
     page: PluginPage,
-    isShow: true,
+    isShow: true
   },
 
   {
     path: '/profile',
     page: ProfilePage,
-    isShow: true,
+    isShow: true
   },
 
   {
     path: '/notfound',
     page: NotFound,
-    isShow: false,
+    isShow: false
   },
   {
     path: '/login',
     page: Login,
-    isShow: false,
+    isShow: false
   },
   {
     path: '/register',
     page: Register,
-    isShow: false,
+    isShow: false
   },
   {
     path: '*',
     page: NotFound,
-    isShow: false,
-  },
-];
+    isShow: false
+  }
+]

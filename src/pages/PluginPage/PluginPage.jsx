@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const PluginPage = () => {
-  return <div>PluginPage</div>;
-};
+  return <div>PluginPage</div>
+}
 
-export default PluginPage;
+export default PluginPage

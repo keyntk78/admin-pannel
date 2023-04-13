@@ -4,15 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .ct-btn__sidebar--active {
-  @apply bg-gradient-to-r text-white from-main-color to-second-color rounded-[15px] hover:text-white;
+  @apply rounded-[15px] bg-gradient-to-r from-main-color to-second-color text-white hover:text-white;
 }
 
 .ct-active-dropdown {
-  @apply scale-100 transition-transform ease-in duration-300;
+  @apply scale-100 transition-transform duration-300 ease-in;
 }
 
 .pagination_active {
-  @apply bg-second-color text-white font-semibold;
+  @apply bg-second-color font-semibold text-white;
 }
 
 .light-background {

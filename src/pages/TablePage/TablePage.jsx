@@ -1,44 +1,34 @@
-import React from 'react';
-import Table from '../../components/Table/Table';
-import customerList from '../../assets/JsonData/customers-list.json';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Table from '../../components/Table/Table'
+import customerList from '../../assets/JsonData/customers-list.json'
+import { Link } from 'react-router-dom'
 
-const customerTableHead = [
-  '',
-  'name',
-  'email',
-  'phone',
-  'total orders',
-  'total spend',
-  'location',
-];
+const customerTableHead = ['', 'name', 'email', 'phone', 'total orders', 'total spend', 'location']
 
 const renderHead = (item, index) => (
-  <th className='capitalize px-[10px] py-[15px]' key={index}>
+  <th className='px-[10px] py-[15px] capitalize' key={index}>
     {item}
   </th>
-);
+)
 
 const renderBody = (item, index) => (
   <tr className='text-left hover:bg-main-color hover:text-white' key={index}>
-    <td className='capitalize px-[10px] py-[15px] '>{item.id}</td>
-    <td className='capitalize px-[10px] py-[15px] '>{item.name}</td>
-    <td className='capitalize px-[10px] py-[15px] '>{item.email}</td>
-    <td className='capitalize px-[10px] py-[15px] '>{item.phone}</td>
-    <td className='capitalize px-[10px] py-[15px] '>{item.total_orders}</td>
-    <td className='capitalize px-[10px] py-[15px] '>{item.total_spend}</td>
-    <td className='capitalize px-[10px] py-[15px] '>{item.location}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.id}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.name}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.email}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.phone}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.total_orders}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.total_spend}</td>
+    <td className='px-[10px] py-[15px] capitalize '>{item.location}</td>
   </tr>
-);
+)
 
 const TablePage = () => {
   return (
     <section>
-      <div className='px-[30px] py-[10px] bg-main-bg dark:bg-main-bg-dark dark:shadow-box-shadow-dark shadow-main rounded-[15px] h-full mb-[30px] flex items-center justify-between'>
+      <div className='mb-[30px] flex h-full items-center justify-between rounded-[15px] bg-main-bg px-[30px] py-[10px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
         <div>
-          <h2 className='capitalize font-semibold text-[20px] pb'>
-            Hi, welcome back!
-          </h2>
+          <h2 className='pb text-[20px] font-semibold capitalize'>Hi, welcome back!</h2>
           <span className='text-sm'>Your business dashboard template</span>
         </div>
         <div className=''>
@@ -57,7 +47,7 @@ const TablePage = () => {
       </div>
       <div className='grid grid-cols-12'>
         <div className='col-span-12'>
-          <div className='px-[30px] py-[30px] bg-main-bg dark:bg-main-bg-dark dark:shadow-box-shadow-dark shadow-main rounded-[15px] h-full'>
+          <div className='h-full rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <div className='px-5 py-5'>
               <Table
                 limit='10'
@@ -71,7 +61,7 @@ const TablePage = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TablePage;
+export default TablePage

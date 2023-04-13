@@ -1,8 +1,8 @@
-import React from 'react';
-import useDarkMode from '../../useDarkMode';
+import React from 'react'
+import useDarkMode from '../../useDarkMode'
 
 const ThemeMode = () => {
-  const [isDarkMode, toggleDarkMode] = useDarkMode();
+  const [isDarkMode, toggleDarkMode] = useDarkMode()
   return (
     <div onClick={() => toggleDarkMode(!isDarkMode)}>
       {isDarkMode ? (
@@ -11,7 +11,7 @@ const ThemeMode = () => {
         <i className='fa-solid fa-moon cursor-pointer text-[26px]'></i>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ThemeMode;
+export default ThemeMode
