@@ -15,13 +15,13 @@ const Default = ({ children }) => {
           openSidebar ? 'fixed z-50 w-[250px]' : 'hidden'
         }  tablet:fixed tablet:z-50 tablet:block tablet:w-[250px]`}
       >
-        <SideBar />
+        <SideBar handleSidebar={handleSidebar} />
       </div>
-      <div className={`${openSidebar ? 'pl-[250px]' : ''} w-screen  tablet:pl-[250px]`}>
-        <div className={`fixed top-0 z-50 w-full tablet:pr-[250px]`}>
+      <div className={`w-screen  tablet:pl-[250px]`}>
+        <div className={`${openSidebar ? 'pl-[250px]' : ''} fixed top-0 z-50 w-full tablet:pr-[250px]`}>
           <Header handleSidebar={handleSidebar} openSidebar={openSidebar} />
         </div>
-        <main className='relative top-[90px] min-h-screen bg-second-bg dark:bg-second-bg-dark'>
+        <main className='relative top-[90px] min-h-screen w-full bg-second-bg dark:bg-second-bg-dark'>
           <div className='px-[30px] py-6'>{children}</div>
         </main>
       </div>

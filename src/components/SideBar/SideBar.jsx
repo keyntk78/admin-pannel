@@ -4,7 +4,7 @@ import logo from '../../assets/images/ezone.png'
 import { Link } from 'react-router-dom'
 import SideBarItem from '../SideBarItem/SideBarItem'
 
-const SideBar = () => {
+const SideBar = (props) => {
   const activeItem = sidebar_item.findIndex((item) => item.route === window.location.pathname)
 
   return (
@@ -17,7 +17,7 @@ const SideBar = () => {
       <div className='mt-6 px-[20px]'>
         {sidebar_item.map((item, index) => {
           return (
-            <Link to={item.route} key={index}>
+            <Link to={item.route} key={index} onClick={props.handleSidebar}>
               <SideBarItem icon={item.icon} title={item.display_name} active={index === activeItem} />
             </Link>
           )

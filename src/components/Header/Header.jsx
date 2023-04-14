@@ -51,12 +51,10 @@ const Header = (props) => {
   const handleSidebar = props.handleSidebar
   const openSidebar = props.openSidebar
 
-  console.log(openSidebar)
-
   return (
     <div className='w-full'>
       <div className='py-[30px flex h-[90px] items-center  justify-between bg-second-bg px-[30px] dark:bg-second-bg-dark'>
-        <div className='phone:hidden'>
+        <div className='tablet:hidden'>
           {openSidebar ? (
             <i className='fa-solid fa-x cursor-pointer text-[26px]' onClick={handleSidebar}></i>
           ) : (
@@ -64,7 +62,11 @@ const Header = (props) => {
           )}
         </div>
 
-        <div className='relative flex h-[50px] items-center overflow-hidden rounded-2xl bg-main-bg shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark '>
+        <div
+          className={`${
+            openSidebar ? 'hidden' : 'flex'
+          } relative  flex h-[50px] items-center overflow-hidden rounded-2xl bg-main-bg shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark `}
+        >
           <input
             type='text'
             placeholder='Search here ...'
@@ -93,7 +95,7 @@ const Header = (props) => {
             <ThemeMode />
           </div>
           <div className='ml-[30px] phone:hidden '>
-            <i className='fa-solid fa-ellipsis-vertical cursor-pointer text-[26px]'></i>
+            <ThemeMenu />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import Default from './components/Default/Default.jsx'
 
 function App() {
   return (
-    <div className='App'>
+    <div className='bg-second-bg-light dark:bg-second-bg-dark'>
       <Router>
         <Routes>
           {routes.map((route) => {

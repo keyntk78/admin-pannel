@@ -1,46 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import useDarkMode from '../../useDarkMode'
-
-const mode_settings = [
-  {
-    id: 'light',
-    name: 'light',
-    background: 'light-background'
-  },
-  {
-    id: 'dark',
-    name: 'dark',
-    background: 'dark-background'
-  }
-]
-
-const color_settings = [
-  {
-    id: 'blue',
-    name: 'Blue',
-    background: 'blue-color'
-  },
-  {
-    id: 'red',
-    name: 'Red',
-    background: 'red-color'
-  },
-  {
-    id: 'cyan',
-    name: 'Cyan',
-    background: 'cyan-color'
-  },
-  {
-    id: 'green',
-    name: 'Green',
-    background: 'green-color'
-  },
-  {
-    id: 'orange',
-    name: 'Orange',
-    background: 'orange-color'
-  }
-]
+import user_image from '../../assets/images/kiet.jpg'
+import userMenu from '../../assets/JsonData/user_menus.json'
 
 const clickOutsideRef = (content_ref, toggle_ref) => {
   document.addEventListener('mousedown', (e) => {
@@ -75,24 +36,9 @@ const ThemeMenu = () => {
     localStorage.setItem('theme', mode.name)
   }
 
-  const [currColor, setcurrColor] = useState('blue')
-
-  const setColor = (color) => {
-    setcurrColor(color.id)
-    localStorage.setItem('color', color.name)
-  }
-
-  useEffect(() => {
-    const themeName = mode_settings.find((e) => e.name === localStorage.getItem('theme', 'Light'))
-
-    const colorName = color_settings.find((e) => e.name === localStorage.getItem('color', 'Light'))
-
-    if (themeName !== undefined) setcurrMode(themeName.id)
-
-    if (colorName !== undefined) setcurrColor(colorName.id)
-  }, [])
-
   const [isDarkMode, toggleDarkMode] = useDarkMode()
+
+  console.log(isDarkMode)
 
   return (
     <div>
@@ -101,57 +47,64 @@ const ThemeMenu = () => {
       </button>
       <div
         ref={menu_ref}
-        className='fixed -right-[300px] top-0 z-50 h-screen w-[300px] bg-main-bg p-5 shadow-main transition-all duration-500 ease-cubic'
+        className='fixed -right-[300px] top-0 z-50 h-screen w-[300px] bg-main-bg p-5 shadow-main transition-all duration-500 ease-cubic dark:bg-main-bg-dark dark:shadow-box-shadow-dark'
       >
-        <h4 className='text-xl font-semibold'>Theme Setting</h4>
+        <div className='flex items-center'>
+          <div className='mr-[10px] h-[40px] w-[40px] overflow-hidden rounded-full'>
+            <img src={user_image} alt='avatar' className='w-full' />
+          </div>
+          <div className='text-lg font-semibold'>Tuấn kiệt</div>
+        </div>
         <button className='absolute right-5 top-[17px] bg-transparent text-xl' onClick={() => closeMenu()}>
           <i className='fa-solid fa-x'></i>
         </button>
+        <div className='mt-10 border-t'>
+          <div>
+            {userMenu.map((item, index) => {
+              return (
+                <div className='mt-4 cursor-pointer p-4 hover:bg-third-color dark:hover:bg-gray-400'>
+                  <i className={`${item.icon} mr-4 text-lg`}></i>
+                  <span className='text-kg'>{item.content}</span>
+                </div>
+              )
+            })}
+            <div className=' mt-4 cursor-pointer p-4 hover:bg-third-color dark:hover:bg-gray-400'>
+              <i className={`fa-regular fa-bell relative mr-4 text-lg`}>
+                <span className='absolute right-[-10px] top-[-12px] flex h-[25px] w-[25px] items-center justify-center rounded-[50%] bg-main-color text-xs text-white'>
+                  12
+                </span>
+              </i>
+
+              <span className='text-kg'>Notification</span>
+            </div>
+          </div>
+        </div>
         <div className='mt-10'>
           <span className='text-lg font-semibold'>Choose mode</span>
           <ul className='mt-5'>
-            {mode_settings.map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  className='mt-[10px] flex cursor-pointer items-center'
-                  onClick={() => toggleDarkMode(!isDarkMode)}
+            {isDarkMode ? (
+              <li className='mt-[10px] flex cursor-pointer items-center' onClick={() => toggleDarkMode(!isDarkMode)}>
+                <div
+                  className={`mr-[10px] flex h-[30px] w-[30px] items-center justify-center rounded-full bg-main-bg text-lg shadow-main`}
                 >
-                  <div
-                    className={`mr-[10px] flex h-[30px] w-[30px] items-center justify-center rounded-full text-lg shadow-main ${item.background}`}
-                  >
-                    <i
-                      className={`fa-solid fa-check transition-transform duration-500 ease-cubic ${
-                        isDarkMode ? 'scale-1' : 'scale-0'
-                      }`}
-                    ></i>
-                  </div>
-                  <span className=''>{item.name}</span>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-
-        <div className='mt-10'>
-          <span className='text-lg font-semibold'>Choose color</span>
-          <ul className='mt-5'>
-            {color_settings.map((item, index) => {
-              return (
-                <li key={index} className='mt-[10px] flex cursor-pointer items-center' onClick={() => setColor(item)}>
-                  <div
-                    className={`mr-[10px] flex h-[30px] w-[30px] items-center justify-center rounded-full text-lg shadow-main ${item.background}`}
-                  >
-                    <i
-                      className={`fa-solid fa-check transition-transform duration-500 ease-cubic ${
-                        item.id === currColor ? 'scale-1' : 'scale-0'
-                      }`}
-                    ></i>
-                  </div>
-                  <span className=''>{item.name}</span>
-                </li>
-              )
-            })}
+                  <i
+                    className={`fa-solid fa-check transition-transform duration-500 ease-cubic ${
+                      isDarkMode ? 'scale-1' : 'scale-0'
+                    }`}
+                  ></i>
+                </div>
+                <span className=''>Light</span>
+              </li>
+            ) : (
+              <li className='mt-[10px] flex cursor-pointer items-center' onClick={() => toggleDarkMode(!isDarkMode)}>
+                <div
+                  className={`mr-[10px] flex h-[30px] w-[30px] items-center justify-center rounded-full bg-main-bg-dark text-lg shadow-main`}
+                >
+                  <i className={`fa-solid fa-check scale-1 transition-transform duration-500 ease-cubic`}></i>
+                </div>
+                <span className=''>Dark</span>
+              </li>
+            )}
           </ul>
         </div>
       </div>
