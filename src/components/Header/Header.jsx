@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Dropdown from '../Dropdown/Dropdown'
 import notifications from '../../assets/JsonData/notification.json'
 import { Link } from 'react-router-dom'
@@ -47,12 +47,21 @@ const renderMenuUser = (item, index) => {
   )
 }
 
-const Header = () => {
+const Header = (props) => {
+  const handleSidebar = props.handleSidebar
+  const openSidebar = props.openSidebar
+
+  console.log(openSidebar)
+
   return (
     <div className='w-full'>
       <div className='py-[30px flex h-[90px] items-center  justify-between bg-second-bg px-[30px] dark:bg-second-bg-dark'>
         <div className='phone:hidden'>
-          <i class='fa-solid fa-bars mr-4 cursor-pointer text-[26px]'></i>
+          {openSidebar ? (
+            <i className='fa-solid fa-x cursor-pointer text-[26px]' onClick={handleSidebar}></i>
+          ) : (
+            <i className='fa-solid fa-bars-staggered mr-4 cursor-pointer text-[26px]' onClick={handleSidebar}></i>
+          )}
         </div>
 
         <div className='relative flex h-[50px] items-center overflow-hidden rounded-2xl bg-main-bg shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark '>

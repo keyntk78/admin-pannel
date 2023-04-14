@@ -30,7 +30,7 @@ const FormPage = () => {
             <div className='mt-4'>
               <form>
                 <div className='mb-5 grid grid-cols-2 gap-10'>
-                  <div className='col-span-1 grid grid-rows-2 '>
+                  <div className=' col-span-2  grid grid-rows-2 tablet:col-span-1 '>
                     <label className='row-span-1 flex items-center'>First Name*</label>
                     <input
                       type='text'
@@ -38,7 +38,7 @@ const FormPage = () => {
                       className='row-span-1 rounded-md border px-4 py-2 focus:outline-none dark:border-gray-500 dark:bg-main-bg-dark'
                     />
                   </div>
-                  <div className='col-span-1 grid grid-rows-2'>
+                  <div className='col-span-2 grid grid-rows-2 tablet:col-span-1'>
                     <label className='row-span-1 flex items-center'>Last Name*</label>
                     <input
                       type='text'
@@ -68,12 +68,12 @@ const FormPage = () => {
                   </div>
                 </div>
 
-                <div className='mb-5 grid grid-cols-2 gap-10'>
-                  <div className='col-span-1 grid grid-rows-2 '>
-                    <label className='row-span-1 flex items-center'>BirdDay</label>
+                <div className='mb-5'>
+                  <label className=' flex items-center'>BirdDay</label>
+                  <div className='grid-cols-2 gap-4'>
                     <input
                       type='date'
-                      className='row-span-1 rounded-md border px-4 py-2 focus:outline-none dark:border-gray-500 dark:bg-main-bg-dark'
+                      className='col-span-1 w-full rounded-md border px-4 py-2 focus:outline-none dark:border-gray-500 dark:bg-main-bg-dark tablet:w-1/3'
                     />
                   </div>
                 </div>
@@ -90,14 +90,14 @@ const FormPage = () => {
                 <div className='mb-8 grid grid-rows-2'>
                   <label className='row-span-1 flex items-center'>Address</label>
                   <div className='row-span-1 grid grid-cols-8 gap-8 '>
-                    <div className='col-span-4'>
+                    <div className='col-span-8 tablet:col-span-4'>
                       <input
                         type='text'
                         placeholder='City'
                         className='row-span-1 w-full rounded-md border px-4 py-2 focus:outline-none dark:border-gray-500 dark:bg-main-bg-dark'
                       />
                     </div>
-                    <div className='col-span-2'>
+                    <div className='col-span-4 tablet:col-span-2'>
                       <select
                         placeholder='State'
                         defaultValue='s'
@@ -111,7 +111,7 @@ const FormPage = () => {
                         <option value='C'>Hà Nội</option>
                       </select>
                     </div>
-                    <div className='col-span-2'>
+                    <div className='col-span-4 tablet:col-span-2'>
                       <input
                         type='text'
                         placeholder='Zip'

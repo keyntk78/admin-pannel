@@ -45,7 +45,7 @@ const Table = (props) => {
         </table>
       </div>
       {pages > 1 ? (
-        <div className='mt-5 flex w-full items-center justify-end'>
+        <div className='mt-5 flex w-full flex-wrap items-center justify-end'>
           {range.map((item, index) => (
             <div
               key={index}

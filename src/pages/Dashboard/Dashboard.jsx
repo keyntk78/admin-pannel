@@ -161,7 +161,7 @@ const Dashboard = () => {
   return (
     <>
       <div className='grid grid-cols-12 gap-4'>
-        <div className='lg:col-span-6 col-span-12'>
+        <div className='col-span-12 desktop:col-span-6'>
           <div className='grid grid-cols-12 gap-4'>
             {statusCards.map((item, index) => {
               return (
@@ -172,12 +172,12 @@ const Dashboard = () => {
             })}
           </div>
         </div>
-        <div className='col-span-12'>
-          <div className='h-[400px] rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
+        <div className='col-span-12 desktop:col-span-6'>
+          <div className='h-full  rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <Chart options={chartOptions.options} series={chartOptions.series} type='line' height='100%' />
           </div>
         </div>
-        <div className=' lg:col-span-5 col-span-12'>
+        <div className=' laptop::col-span-5 col-span-12'>
           <div className='h-full rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <div className=''>
               <h3 className='pb-4 text-[18px] font-semibold'>Top customers</h3>
@@ -197,7 +197,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className='lg:col-span-7 col-span-12'>
+        <div className='laptop::col-span-7 col-span-12'>
           <div className='h-full rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <div className=''>
               <h3 className='pb-4 text-[18px] font-semibold'>Later Order</h3>
