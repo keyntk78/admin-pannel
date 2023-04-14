@@ -161,23 +161,23 @@ const Dashboard = () => {
   return (
     <>
       <div className='grid grid-cols-12 gap-4'>
-        <div className='col-span-6'>
+        <div className='lg:col-span-6 col-span-12'>
           <div className='grid grid-cols-12 gap-4'>
             {statusCards.map((item, index) => {
               return (
-                <div className='col-span-6' key={index}>
+                <div className='col-span-12 tablet:col-span-6' key={index}>
                   <StatusCard icon={item.icon} count={item.count} title={item.title} color={item.color} />
                 </div>
               )
             })}
           </div>
         </div>
-        <div className='col-span-6'>
-          <div className='h-full rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
+        <div className='col-span-12'>
+          <div className='h-[400px] rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <Chart options={chartOptions.options} series={chartOptions.series} type='line' height='100%' />
           </div>
         </div>
-        <div className='col-span-5'>
+        <div className=' lg:col-span-5 col-span-12'>
           <div className='h-full rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <div className=''>
               <h3 className='pb-4 text-[18px] font-semibold'>Top customers</h3>
@@ -197,7 +197,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className='col-span-7'>
+        <div className='lg:col-span-7 col-span-12'>
           <div className='h-full rounded-[15px] bg-main-bg px-[30px] py-[30px] shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
             <div className=''>
               <h3 className='pb-4 text-[18px] font-semibold'>Later Order</h3>

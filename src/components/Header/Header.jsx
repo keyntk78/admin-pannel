@@ -49,8 +49,12 @@ const renderMenuUser = (item, index) => {
 
 const Header = () => {
   return (
-    <div className='bg-second-bg pl-[250px] dark:bg-second-bg-dark'>
-      <div className='flex h-[90px] items-center justify-between px-[30px] py-[30px]'>
+    <div className='w-full'>
+      <div className='py-[30px flex h-[90px] items-center  justify-between bg-second-bg px-[30px] dark:bg-second-bg-dark'>
+        <div className='phone:hidden'>
+          <i class='fa-solid fa-bars mr-4 cursor-pointer text-[26px]'></i>
+        </div>
+
         <div className='relative flex h-[50px] items-center overflow-hidden rounded-2xl bg-main-bg shadow-main dark:bg-main-bg-dark dark:shadow-box-shadow-dark '>
           <input
             type='text'
@@ -60,7 +64,7 @@ const Header = () => {
           <i className='fa-solid fa-magnifying-glass absolute right-5 text-[16px]'></i>
         </div>
         <div className='flex items-center'>
-          <div className='ml-[30px]'>
+          <div className='ml-[30px] hidden phone:flex'>
             <Dropdown
               icon='fa-regular fa-bell'
               badge='12'
@@ -69,15 +73,18 @@ const Header = () => {
               renderFooter={() => <Link to='/'>View All</Link>}
             />
           </div>
-          <div className='ml-[30px]'>
+          <div className='ml-[30px] hidden phone:flex'>
             <Dropdown
               cusTomToggle={() => renderUserToggle(curr_user)}
               contentData={user_menu}
               renderItems={(item, index) => renderMenuUser(item, index)}
             />
           </div>
-          <div className='ml-[30px]'>
+          <div className='ml-[30px] hidden phone:flex'>
             <ThemeMode />
+          </div>
+          <div className='ml-[30px] phone:hidden '>
+            <i className='fa-solid fa-ellipsis-vertical cursor-pointer text-[26px]'></i>
           </div>
         </div>
       </div>

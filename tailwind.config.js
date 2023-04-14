@@ -2,6 +2,18 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   darkMode: 'class',
   theme: {
+    screens: {
+      phone: '670px',
+
+      tablet: '870px',
+      // => @media (min-width: 640px) { ... }
+
+      laptop: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: '1280px'
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       colors: {
         'main-bg': '#ffff',
@@ -33,20 +45,20 @@ module.exports = {
 
         'main-bg-dark': '#2d2d2d',
         'second-bg-dark': '#202020',
-        'txt-color-dark': '#bbbbbb',
+        'txt-color-dark': '#bbbbbb'
       },
       boxShadow: {
         main: ' rgba(149, 157, 165, 0.2) 0px 8px 24px',
         'box-shadow-light': 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
-        'box-shadow-dark': 'rgba(0, 0, 0, 0.2) 0px 5px 10px',
+        'box-shadow-dark': 'rgba(0, 0, 0, 0.2) 0px 5px 10px'
       },
       transitionTimingFunction: {
-        cubic: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-      },
+        cubic: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+      }
     },
     fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
-    },
+      roboto: ['Roboto', 'sans-serif']
+    }
   },
-  plugins: [],
-};
+  plugins: []
+}

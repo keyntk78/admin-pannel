@@ -8,7 +8,7 @@ const SideBar = () => {
   const activeItem = sidebar_item.findIndex((item) => item.route === window.location.pathname)
 
   return (
-    <div className='fixed left-0 top-0 h-screen w-[250px]  bg-main-bg shadow-main  dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
+    <div className='h-screen bg-main-bg shadow-main  dark:bg-main-bg-dark dark:shadow-box-shadow-dark'>
       <div className='flex h-[90px] items-center justify-center '>
         <Link to='/' className=''>
           <img src={logo} alt='Logo' className='h-[80px] ' />
